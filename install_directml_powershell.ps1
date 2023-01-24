@@ -6,13 +6,12 @@ if ($env_name -eq $null) {
 }
 
 # Create new environment
-conda create --name $env_name -y
+conda create --name $env_name python=3.10 numpy pandas tensorboard matplotlib tqdm pyyaml -y
 
 # Activate the new environment
 conda activate $env_name
 
 # Install necessary packages
-conda install numpy pandas tensorboard matplotlib tqdm pyyaml -y
 pip install opencv-python
 pip install wget
 pip install torchvision
